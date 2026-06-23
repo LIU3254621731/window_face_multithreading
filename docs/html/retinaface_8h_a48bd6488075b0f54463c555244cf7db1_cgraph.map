@@ -1,0 +1,4 @@
+<map id="init_retinaface_model" name="init_retinaface_model">
+<area shape="rect" id="node1" title="初始化RetinaFace模型" alt="" coords="5,5,169,32"/>
+<area shape="rect" id="node2" href="$rknpu2_2retinaface_8cc.html#adf678ec5ada45bc71d347cf33a20e859" title="打印张量属性信息" alt="" coords="217,5,355,32"/>
+</map>

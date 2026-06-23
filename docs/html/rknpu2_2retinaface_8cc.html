@@ -1,0 +1,942 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Face Mesh for rk3588: cpp/rknpu2/retinaface.cc 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Face Mesh for rk3588
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">基于RKNN的Face Mesh模型推理示例</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_df511e5bd85cec96854b39d5e1c27aa8.html">cpp</a></li><li class="navelem"><a class="el" href="dir_623e572514891b2a92112378b20c684a.html">rknpu2</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">retinaface.cc 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>RetinaFace人脸检测模型实现  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="retinaface_8h_source.html">retinaface.h</a>&quot;</code><br />
+<code>#include &quot;common.h&quot;</code><br />
+<code>#include &quot;file_utils.h&quot;</code><br />
+<code>#include &quot;image_utils.h&quot;</code><br />
+<code>#include &quot;rknn_box_priors.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+retinaface.cc 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rknpu2_2retinaface_8cc__incl.png" border="0" usemap="#acpp_2rknpu2_2retinaface_8cc" alt=""/></div>
+<map name="acpp_2rknpu2_2retinaface_8cc" id="acpp_2rknpu2_2retinaface_8cc">
+<area shape="rect" title="RetinaFace人脸检测模型实现" alt="" coords="337,5,519,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,72,107"/>
+<area shape="rect" title=" " alt="" coords="97,80,167,107"/>
+<area shape="rect" title=" " alt="" coords="191,80,262,107"/>
+<area shape="rect" title=" " alt="" coords="286,80,354,107"/>
+<area shape="rect" href="retinaface_8h.html" title="RetinaFace人脸检测模型接口定义" alt="" coords="378,80,478,107"/>
+<area shape="rect" title=" " alt="" coords="471,155,561,181"/>
+<area shape="rect" title=" " alt="" coords="554,80,643,107"/>
+<area shape="rect" title=" " alt="" coords="667,80,778,107"/>
+<area shape="rect" href="rknn__box__priors_8h_source.html" title=" " alt="" coords="803,80,941,107"/>
+<area shape="rect" title=" " alt="" coords="356,155,447,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a647e83f36b4fec70389d00c57b66b110"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rknpu2_2retinaface_8cc.html#a647e83f36b4fec70389d00c57b66b110">NMS_THRESHOLD</a>&#160;&#160;&#160;0.4</td></tr>
+<tr class="separator:a647e83f36b4fec70389d00c57b66b110"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab51cee97335b49c45959a81a30b3dd63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rknpu2_2retinaface_8cc.html#ab51cee97335b49c45959a81a30b3dd63">CONF_THRESHOLD</a>&#160;&#160;&#160;0.5</td></tr>
+<tr class="separator:ab51cee97335b49c45959a81a30b3dd63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8d5ea661b16a639fd7c68a9830ca3e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rknpu2_2retinaface_8cc.html#ae8d5ea661b16a639fd7c68a9830ca3e4">VIS_THRESHOLD</a>&#160;&#160;&#160;0.4</td></tr>
+<tr class="separator:ae8d5ea661b16a639fd7c68a9830ca3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a0461ab52fc1dd08e2f9de8739e738520"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rknpu2_2retinaface_8cc.html#a0461ab52fc1dd08e2f9de8739e738520">clamp</a> (int x, int min, int max)</td></tr>
+<tr class="memdesc:a0461ab52fc1dd08e2f9de8739e738520"><td class="mdescLeft">&#160;</td><td class="mdescRight">将数值限制在指定范围内  <a href="rknpu2_2retinaface_8cc.html#a0461ab52fc1dd08e2f9de8739e738520">更多...</a><br /></td></tr>
+<tr class="separator:a0461ab52fc1dd08e2f9de8739e738520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf678ec5ada45bc71d347cf33a20e859"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rknpu2_2retinaface_8cc.html#adf678ec5ada45bc71d347cf33a20e859">dump_tensor_attr</a> (rknn_tensor_attr *attr)</td></tr>
+<tr class="memdesc:adf678ec5ada45bc71d347cf33a20e859"><td class="mdescLeft">&#160;</td><td class="mdescRight">打印张量属性信息  <a href="rknpu2_2retinaface_8cc.html#adf678ec5ada45bc71d347cf33a20e859">更多...</a><br /></td></tr>
+<tr class="separator:adf678ec5ada45bc71d347cf33a20e859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3169fd021788786afa29b1dbe0aa59c1"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rknpu2_2retinaface_8cc.html#a3169fd021788786afa29b1dbe0aa59c1">CalculateOverlap</a> (float xmin0, float ymin0, float xmax0, float ymax0, float xmin1, float ymin1, float xmax1, float ymax1)</td></tr>
+<tr class="memdesc:a3169fd021788786afa29b1dbe0aa59c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算两个边界框的重叠度（IoU）  <a href="rknpu2_2retinaface_8cc.html#a3169fd021788786afa29b1dbe0aa59c1">更多...</a><br /></td></tr>
+<tr class="separator:a3169fd021788786afa29b1dbe0aa59c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44eb439f4f76da9209b77e8538042cfd"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rknpu2_2retinaface_8cc.html#a44eb439f4f76da9209b77e8538042cfd">nms</a> (int validCount, float *outputLocations, int order[], float threshold, int width, int height)</td></tr>
+<tr class="memdesc:a44eb439f4f76da9209b77e8538042cfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行非极大值抑制（NMS）  <a href="rknpu2_2retinaface_8cc.html#a44eb439f4f76da9209b77e8538042cfd">更多...</a><br /></td></tr>
+<tr class="separator:a44eb439f4f76da9209b77e8538042cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad093c22094925c598342c7b07332451"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rknpu2_2retinaface_8cc.html#aad093c22094925c598342c7b07332451">quick_sort_indice_inverse</a> (float *input, int left, int right, int *indices)</td></tr>
+<tr class="memdesc:aad093c22094925c598342c7b07332451"><td class="mdescLeft">&#160;</td><td class="mdescRight">快速排序（降序）  <a href="rknpu2_2retinaface_8cc.html#aad093c22094925c598342c7b07332451">更多...</a><br /></td></tr>
+<tr class="separator:aad093c22094925c598342c7b07332451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a563486851a2ec9e1e001e2d72248ab5e"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rknpu2_2retinaface_8cc.html#a563486851a2ec9e1e001e2d72248ab5e">filterValidResult</a> (float *scores, float *loc, float *landms, const float boxPriors[][4], int model_in_h, int model_in_w, int filter_indice[], float *props, float threshold, const int num_results)</td></tr>
+<tr class="memdesc:a563486851a2ec9e1e001e2d72248ab5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">过滤有效检测结果  <a href="rknpu2_2retinaface_8cc.html#a563486851a2ec9e1e001e2d72248ab5e">更多...</a><br /></td></tr>
+<tr class="separator:a563486851a2ec9e1e001e2d72248ab5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82f6f9531f5c5e6d144c258814a03a22"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rknpu2_2retinaface_8cc.html#a82f6f9531f5c5e6d144c258814a03a22">post_process_retinaface</a> (<a class="el" href="structrknn__app__context__t.html">rknn_app_context_t</a> *app_ctx, image_buffer_t *src_img, rknn_output outputs[], <a class="el" href="structretinaface__result.html">retinaface_result</a> *result, letterbox_t *letter_box)</td></tr>
+<tr class="memdesc:a82f6f9531f5c5e6d144c258814a03a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">RetinaFace后处理  <a href="rknpu2_2retinaface_8cc.html#a82f6f9531f5c5e6d144c258814a03a22">更多...</a><br /></td></tr>
+<tr class="separator:a82f6f9531f5c5e6d144c258814a03a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48bd6488075b0f54463c555244cf7db1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rknpu2_2retinaface_8cc.html#a48bd6488075b0f54463c555244cf7db1">init_retinaface_model</a> (const char *model_path, <a class="el" href="structrknn__app__context__t.html">rknn_app_context_t</a> *app_ctx)</td></tr>
+<tr class="memdesc:a48bd6488075b0f54463c555244cf7db1"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化RetinaFace模型  <a href="rknpu2_2retinaface_8cc.html#a48bd6488075b0f54463c555244cf7db1">更多...</a><br /></td></tr>
+<tr class="separator:a48bd6488075b0f54463c555244cf7db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fd5b6d3fd3d5eb41273cb3ac445cd87"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rknpu2_2retinaface_8cc.html#a6fd5b6d3fd3d5eb41273cb3ac445cd87">release_retinaface_model</a> (<a class="el" href="structrknn__app__context__t.html">rknn_app_context_t</a> *app_ctx)</td></tr>
+<tr class="memdesc:a6fd5b6d3fd3d5eb41273cb3ac445cd87"><td class="mdescLeft">&#160;</td><td class="mdescRight">释放RetinaFace模型资源  <a href="rknpu2_2retinaface_8cc.html#a6fd5b6d3fd3d5eb41273cb3ac445cd87">更多...</a><br /></td></tr>
+<tr class="separator:a6fd5b6d3fd3d5eb41273cb3ac445cd87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2336c37db066d6d065f4458e495fbc11"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rknpu2_2retinaface_8cc.html#a2336c37db066d6d065f4458e495fbc11">inference_retinaface_model</a> (<a class="el" href="structrknn__app__context__t.html">rknn_app_context_t</a> *app_ctx, image_buffer_t *src_img, <a class="el" href="structretinaface__result.html">retinaface_result</a> *out_result)</td></tr>
+<tr class="memdesc:a2336c37db066d6d065f4458e495fbc11"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行RetinaFace模型推理  <a href="rknpu2_2retinaface_8cc.html#a2336c37db066d6d065f4458e495fbc11">更多...</a><br /></td></tr>
+<tr class="separator:a2336c37db066d6d065f4458e495fbc11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>RetinaFace人脸检测模型实现 </p>
+<dl class="section author"><dt>作者</dt><dd>边锦程 </dd></dl>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="ab51cee97335b49c45959a81a30b3dd63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab51cee97335b49c45959a81a30b3dd63">&#9670;&nbsp;</a></span>CONF_THRESHOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONF_THRESHOLD&#160;&#160;&#160;0.5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>置信度阈值 </p>
+
+</div>
+</div>
+<a id="a647e83f36b4fec70389d00c57b66b110"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a647e83f36b4fec70389d00c57b66b110">&#9670;&nbsp;</a></span>NMS_THRESHOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NMS_THRESHOLD&#160;&#160;&#160;0.4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>非极大值抑制阈值 </p>
+
+</div>
+</div>
+<a id="ae8d5ea661b16a639fd7c68a9830ca3e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8d5ea661b16a639fd7c68a9830ca3e4">&#9670;&nbsp;</a></span>VIS_THRESHOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VIS_THRESHOLD&#160;&#160;&#160;0.4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>可视化阈值 </p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a3169fd021788786afa29b1dbe0aa59c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3169fd021788786afa29b1dbe0aa59c1">&#9670;&nbsp;</a></span>CalculateOverlap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float CalculateOverlap </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>xmin0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ymin0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>xmax0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ymax0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>xmin1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ymin1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>xmax1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ymax1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>计算两个边界框的重叠度（IoU） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xmin0</td><td>第一个框的左边界 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ymin0</td><td>第一个框的上边界 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xmax0</td><td>第一个框的右边界 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ymax0</td><td>第一个框的下边界 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xmin1</td><td>第二个框的左边界 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ymin1</td><td>第二个框的上边界 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xmax1</td><td>第二个框的右边界 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ymax1</td><td>第二个框的下边界 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>float 重叠度值 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rknpu2_2retinaface_8cc_a3169fd021788786afa29b1dbe0aa59c1_icgraph.png" border="0" usemap="#arknpu2_2retinaface_8cc_a3169fd021788786afa29b1dbe0aa59c1_icgraph" alt=""/></div>
+<map name="arknpu2_2retinaface_8cc_a3169fd021788786afa29b1dbe0aa59c1_icgraph" id="arknpu2_2retinaface_8cc_a3169fd021788786afa29b1dbe0aa59c1_icgraph">
+<area shape="rect" title="计算两个边界框的重叠度（IoU）" alt="" coords="639,13,773,39"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a44eb439f4f76da9209b77e8538042cfd" title="执行非极大值抑制（NMS）" alt="" coords="540,13,591,39"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a82f6f9531f5c5e6d144c258814a03a22" title="RetinaFace后处理" alt="" coords="312,13,492,39"/>
+<area shape="rect" href="retinaface_8h.html#a19d411e26eec145ce8e0b9d5a9a75f04" title="执行RetinaFace模型推理" alt="" coords="108,5,264,47"/>
+<area shape="rect" href="main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，用于运行RetinaFace人脸检测" alt="" coords="5,13,60,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0461ab52fc1dd08e2f9de8739e738520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0461ab52fc1dd08e2f9de8739e738520">&#9670;&nbsp;</a></span>clamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int clamp </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将数值限制在指定范围内 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>输入值 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">min</td><td>最小值 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max</td><td>最大值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 限制后的值 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rknpu2_2retinaface_8cc_a0461ab52fc1dd08e2f9de8739e738520_icgraph.png" border="0" usemap="#arknpu2_2retinaface_8cc_a0461ab52fc1dd08e2f9de8739e738520_icgraph" alt=""/></div>
+<map name="arknpu2_2retinaface_8cc_a0461ab52fc1dd08e2f9de8739e738520_icgraph" id="arknpu2_2retinaface_8cc_a0461ab52fc1dd08e2f9de8739e738520_icgraph">
+<area shape="rect" title="将数值限制在指定范围内" alt="" coords="540,13,603,39"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a82f6f9531f5c5e6d144c258814a03a22" title="RetinaFace后处理" alt="" coords="312,13,492,39"/>
+<area shape="rect" href="retinaface_8h.html#a19d411e26eec145ce8e0b9d5a9a75f04" title="执行RetinaFace模型推理" alt="" coords="108,5,264,47"/>
+<area shape="rect" href="main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，用于运行RetinaFace人脸检测" alt="" coords="5,13,60,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adf678ec5ada45bc71d347cf33a20e859"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf678ec5ada45bc71d347cf33a20e859">&#9670;&nbsp;</a></span>dump_tensor_attr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void dump_tensor_attr </td>
+          <td>(</td>
+          <td class="paramtype">rknn_tensor_attr *&#160;</td>
+          <td class="paramname"><em>attr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>打印张量属性信息 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">attr</td><td>张量属性指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rknpu2_2retinaface_8cc_adf678ec5ada45bc71d347cf33a20e859_icgraph.png" border="0" usemap="#arknpu2_2retinaface_8cc_adf678ec5ada45bc71d347cf33a20e859_icgraph" alt=""/></div>
+<map name="arknpu2_2retinaface_8cc_adf678ec5ada45bc71d347cf33a20e859_icgraph" id="arknpu2_2retinaface_8cc_adf678ec5ada45bc71d347cf33a20e859_icgraph">
+<area shape="rect" title="打印张量属性信息" alt="" coords="320,5,457,32"/>
+<area shape="rect" href="retinaface_8h.html#a48bd6488075b0f54463c555244cf7db1" title="初始化RetinaFace模型" alt="" coords="108,5,272,32"/>
+<area shape="rect" href="main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，用于运行RetinaFace人脸检测" alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a563486851a2ec9e1e001e2d72248ab5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a563486851a2ec9e1e001e2d72248ab5e">&#9670;&nbsp;</a></span>filterValidResult()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int filterValidResult </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>scores</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>loc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>landms</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>boxPriors</em>[][4], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>model_in_h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>model_in_w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>filter_indice</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>props</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>num_results</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>过滤有效检测结果 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">scores</td><td>置信度数组 </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">loc</td><td>位置数组 </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">landms</td><td>关键点数组 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">boxPriors</td><td>先验框数组 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">model_in_h</td><td>模型输入高度 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">model_in_w</td><td>模型输入宽度 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">filter_indice</td><td>过滤后的索引数组 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">props</td><td>过滤后的置信度数组 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">threshold</td><td>置信度阈值 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_results</td><td>结果数量 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 有效检测框数量 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rknpu2_2retinaface_8cc_a563486851a2ec9e1e001e2d72248ab5e_icgraph.png" border="0" usemap="#arknpu2_2retinaface_8cc_a563486851a2ec9e1e001e2d72248ab5e_icgraph" alt=""/></div>
+<map name="arknpu2_2retinaface_8cc_a563486851a2ec9e1e001e2d72248ab5e_icgraph" id="arknpu2_2retinaface_8cc_a563486851a2ec9e1e001e2d72248ab5e_icgraph">
+<area shape="rect" title="过滤有效检测结果" alt="" coords="540,13,665,39"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a82f6f9531f5c5e6d144c258814a03a22" title="RetinaFace后处理" alt="" coords="312,13,492,39"/>
+<area shape="rect" href="retinaface_8h.html#a19d411e26eec145ce8e0b9d5a9a75f04" title="执行RetinaFace模型推理" alt="" coords="108,5,264,47"/>
+<area shape="rect" href="main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，用于运行RetinaFace人脸检测" alt="" coords="5,13,60,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2336c37db066d6d065f4458e495fbc11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2336c37db066d6d065f4458e495fbc11">&#9670;&nbsp;</a></span>inference_retinaface_model()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int inference_retinaface_model </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structrknn__app__context__t.html">rknn_app_context_t</a> *&#160;</td>
+          <td class="paramname"><em>app_ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">image_buffer_t *&#160;</td>
+          <td class="paramname"><em>src_img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structretinaface__result.html">retinaface_result</a> *&#160;</td>
+          <td class="paramname"><em>out_result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>执行RetinaFace模型推理 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">app_ctx</td><td>RKNN应用上下文 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>输入图像 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>检测结果 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 0表示成功，非0表示失败 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rknpu2_2retinaface_8cc_a2336c37db066d6d065f4458e495fbc11_cgraph.png" border="0" usemap="#arknpu2_2retinaface_8cc_a2336c37db066d6d065f4458e495fbc11_cgraph" alt=""/></div>
+<map name="arknpu2_2retinaface_8cc_a2336c37db066d6d065f4458e495fbc11_cgraph" id="arknpu2_2retinaface_8cc_a2336c37db066d6d065f4458e495fbc11_cgraph">
+<area shape="rect" title="执行RetinaFace模型推理" alt="" coords="5,74,161,115"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a82f6f9531f5c5e6d144c258814a03a22" title="RetinaFace后处理" alt="" coords="209,81,389,108"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a0461ab52fc1dd08e2f9de8739e738520" title="将数值限制在指定范围内" alt="" coords="501,5,564,32"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a563486851a2ec9e1e001e2d72248ab5e" title="过滤有效检测结果" alt="" coords="470,56,595,83"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a44eb439f4f76da9209b77e8538042cfd" title="执行非极大值抑制（NMS）" alt="" coords="507,107,558,133"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#aad093c22094925c598342c7b07332451" title="快速排序（降序）" alt="" coords="437,157,628,184"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a3169fd021788786afa29b1dbe0aa59c1" title="计算两个边界框的重叠度（IoU）" alt="" coords="676,107,811,133"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rknpu2_2retinaface_8cc_a2336c37db066d6d065f4458e495fbc11_icgraph.png" border="0" usemap="#arknpu2_2retinaface_8cc_a2336c37db066d6d065f4458e495fbc11_icgraph" alt=""/></div>
+<map name="arknpu2_2retinaface_8cc_a2336c37db066d6d065f4458e495fbc11_icgraph" id="arknpu2_2retinaface_8cc_a2336c37db066d6d065f4458e495fbc11_icgraph">
+<area shape="rect" title="执行RetinaFace模型推理" alt="" coords="108,5,264,47"/>
+<area shape="rect" href="main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，用于运行RetinaFace人脸检测" alt="" coords="5,13,60,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a48bd6488075b0f54463c555244cf7db1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48bd6488075b0f54463c555244cf7db1">&#9670;&nbsp;</a></span>init_retinaface_model()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int init_retinaface_model </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>model_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structrknn__app__context__t.html">rknn_app_context_t</a> *&#160;</td>
+          <td class="paramname"><em>app_ctx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>初始化RetinaFace模型 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">model_path</td><td>模型文件路径 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">app_ctx</td><td>RKNN应用上下文 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 0表示成功，非0表示失败 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rknpu2_2retinaface_8cc_a48bd6488075b0f54463c555244cf7db1_cgraph.png" border="0" usemap="#arknpu2_2retinaface_8cc_a48bd6488075b0f54463c555244cf7db1_cgraph" alt=""/></div>
+<map name="arknpu2_2retinaface_8cc_a48bd6488075b0f54463c555244cf7db1_cgraph" id="arknpu2_2retinaface_8cc_a48bd6488075b0f54463c555244cf7db1_cgraph">
+<area shape="rect" title="初始化RetinaFace模型" alt="" coords="5,5,169,32"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#adf678ec5ada45bc71d347cf33a20e859" title="打印张量属性信息" alt="" coords="217,5,355,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rknpu2_2retinaface_8cc_a48bd6488075b0f54463c555244cf7db1_icgraph.png" border="0" usemap="#arknpu2_2retinaface_8cc_a48bd6488075b0f54463c555244cf7db1_icgraph" alt=""/></div>
+<map name="arknpu2_2retinaface_8cc_a48bd6488075b0f54463c555244cf7db1_icgraph" id="arknpu2_2retinaface_8cc_a48bd6488075b0f54463c555244cf7db1_icgraph">
+<area shape="rect" title="初始化RetinaFace模型" alt="" coords="108,5,272,32"/>
+<area shape="rect" href="main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，用于运行RetinaFace人脸检测" alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a44eb439f4f76da9209b77e8538042cfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44eb439f4f76da9209b77e8538042cfd">&#9670;&nbsp;</a></span>nms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int nms </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>validCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>outputLocations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>order</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行非极大值抑制（NMS） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">validCount</td><td>有效检测框数量 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">outputLocations</td><td>检测框位置数组 </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">order</td><td>排序索引数组 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">threshold</td><td>NMS阈值 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>图像宽度 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">height</td><td>图像高度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 0表示成功 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rknpu2_2retinaface_8cc_a44eb439f4f76da9209b77e8538042cfd_cgraph.png" border="0" usemap="#arknpu2_2retinaface_8cc_a44eb439f4f76da9209b77e8538042cfd_cgraph" alt=""/></div>
+<map name="arknpu2_2retinaface_8cc_a44eb439f4f76da9209b77e8538042cfd_cgraph" id="arknpu2_2retinaface_8cc_a44eb439f4f76da9209b77e8538042cfd_cgraph">
+<area shape="rect" title="执行非极大值抑制（NMS）" alt="" coords="5,5,56,32"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a3169fd021788786afa29b1dbe0aa59c1" title="计算两个边界框的重叠度（IoU）" alt="" coords="104,5,239,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rknpu2_2retinaface_8cc_a44eb439f4f76da9209b77e8538042cfd_icgraph.png" border="0" usemap="#arknpu2_2retinaface_8cc_a44eb439f4f76da9209b77e8538042cfd_icgraph" alt=""/></div>
+<map name="arknpu2_2retinaface_8cc_a44eb439f4f76da9209b77e8538042cfd_icgraph" id="arknpu2_2retinaface_8cc_a44eb439f4f76da9209b77e8538042cfd_icgraph">
+<area shape="rect" title="执行非极大值抑制（NMS）" alt="" coords="540,13,591,39"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a82f6f9531f5c5e6d144c258814a03a22" title="RetinaFace后处理" alt="" coords="312,13,492,39"/>
+<area shape="rect" href="retinaface_8h.html#a19d411e26eec145ce8e0b9d5a9a75f04" title="执行RetinaFace模型推理" alt="" coords="108,5,264,47"/>
+<area shape="rect" href="main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，用于运行RetinaFace人脸检测" alt="" coords="5,13,60,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a82f6f9531f5c5e6d144c258814a03a22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82f6f9531f5c5e6d144c258814a03a22">&#9670;&nbsp;</a></span>post_process_retinaface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int post_process_retinaface </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structrknn__app__context__t.html">rknn_app_context_t</a> *&#160;</td>
+          <td class="paramname"><em>app_ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">image_buffer_t *&#160;</td>
+          <td class="paramname"><em>src_img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rknn_output&#160;</td>
+          <td class="paramname"><em>outputs</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structretinaface__result.html">retinaface_result</a> *&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">letterbox_t *&#160;</td>
+          <td class="paramname"><em>letter_box</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>RetinaFace后处理 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">app_ctx</td><td>RKNN应用上下文 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">src_img</td><td>源图像 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">outputs</td><td>模型输出 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>检测结果 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">letter_box</td><td>图像缩放信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 0表示成功，非0表示失败 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rknpu2_2retinaface_8cc_a82f6f9531f5c5e6d144c258814a03a22_cgraph.png" border="0" usemap="#arknpu2_2retinaface_8cc_a82f6f9531f5c5e6d144c258814a03a22_cgraph" alt=""/></div>
+<map name="arknpu2_2retinaface_8cc_a82f6f9531f5c5e6d144c258814a03a22_cgraph" id="arknpu2_2retinaface_8cc_a82f6f9531f5c5e6d144c258814a03a22_cgraph">
+<area shape="rect" title="RetinaFace后处理" alt="" coords="5,81,185,108"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a0461ab52fc1dd08e2f9de8739e738520" title="将数值限制在指定范围内" alt="" coords="297,5,360,32"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a563486851a2ec9e1e001e2d72248ab5e" title="过滤有效检测结果" alt="" coords="266,56,391,83"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a44eb439f4f76da9209b77e8538042cfd" title="执行非极大值抑制（NMS）" alt="" coords="303,107,354,133"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#aad093c22094925c598342c7b07332451" title="快速排序（降序）" alt="" coords="233,157,424,184"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a3169fd021788786afa29b1dbe0aa59c1" title="计算两个边界框的重叠度（IoU）" alt="" coords="472,107,607,133"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rknpu2_2retinaface_8cc_a82f6f9531f5c5e6d144c258814a03a22_icgraph.png" border="0" usemap="#arknpu2_2retinaface_8cc_a82f6f9531f5c5e6d144c258814a03a22_icgraph" alt=""/></div>
+<map name="arknpu2_2retinaface_8cc_a82f6f9531f5c5e6d144c258814a03a22_icgraph" id="arknpu2_2retinaface_8cc_a82f6f9531f5c5e6d144c258814a03a22_icgraph">
+<area shape="rect" title="RetinaFace后处理" alt="" coords="312,13,492,39"/>
+<area shape="rect" href="retinaface_8h.html#a19d411e26eec145ce8e0b9d5a9a75f04" title="执行RetinaFace模型推理" alt="" coords="108,5,264,47"/>
+<area shape="rect" href="main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，用于运行RetinaFace人脸检测" alt="" coords="5,13,60,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aad093c22094925c598342c7b07332451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad093c22094925c598342c7b07332451">&#9670;&nbsp;</a></span>quick_sort_indice_inverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int quick_sort_indice_inverse </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>indices</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>快速排序（降序） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">input</td><td>输入数组 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">left</td><td>左边界 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">right</td><td>右边界 </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">indices</td><td>索引数组 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 基准元素位置 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rknpu2_2retinaface_8cc_aad093c22094925c598342c7b07332451_icgraph.png" border="0" usemap="#arknpu2_2retinaface_8cc_aad093c22094925c598342c7b07332451_icgraph" alt=""/></div>
+<map name="arknpu2_2retinaface_8cc_aad093c22094925c598342c7b07332451_icgraph" id="arknpu2_2retinaface_8cc_aad093c22094925c598342c7b07332451_icgraph">
+<area shape="rect" title="快速排序（降序）" alt="" coords="540,13,731,39"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a82f6f9531f5c5e6d144c258814a03a22" title="RetinaFace后处理" alt="" coords="312,13,492,39"/>
+<area shape="rect" href="retinaface_8h.html#a19d411e26eec145ce8e0b9d5a9a75f04" title="执行RetinaFace模型推理" alt="" coords="108,5,264,47"/>
+<area shape="rect" href="main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，用于运行RetinaFace人脸检测" alt="" coords="5,13,60,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6fd5b6d3fd3d5eb41273cb3ac445cd87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fd5b6d3fd3d5eb41273cb3ac445cd87">&#9670;&nbsp;</a></span>release_retinaface_model()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int release_retinaface_model </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structrknn__app__context__t.html">rknn_app_context_t</a> *&#160;</td>
+          <td class="paramname"><em>app_ctx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>释放RetinaFace模型资源 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">app_ctx</td><td>RKNN应用上下文 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 0表示成功，非0表示失败 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rknpu2_2retinaface_8cc_a6fd5b6d3fd3d5eb41273cb3ac445cd87_icgraph.png" border="0" usemap="#arknpu2_2retinaface_8cc_a6fd5b6d3fd3d5eb41273cb3ac445cd87_icgraph" alt=""/></div>
+<map name="arknpu2_2retinaface_8cc_a6fd5b6d3fd3d5eb41273cb3ac445cd87_icgraph" id="arknpu2_2retinaface_8cc_a6fd5b6d3fd3d5eb41273cb3ac445cd87_icgraph">
+<area shape="rect" title="释放RetinaFace模型资源" alt="" coords="108,5,251,47"/>
+<area shape="rect" href="main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，用于运行RetinaFace人脸检测" alt="" coords="5,13,60,39"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

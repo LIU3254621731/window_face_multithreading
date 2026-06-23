@@ -1,0 +1,4 @@
+<map id="init_retinaface_model" name="init_retinaface_model">
+<area shape="rect" id="node1" title="初始化RetinaFace模型" alt="" coords="108,5,272,32"/>
+<area shape="rect" id="node2" href="$main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，用于运行RetinaFace人脸检测" alt="" coords="5,5,60,32"/>
+</map>

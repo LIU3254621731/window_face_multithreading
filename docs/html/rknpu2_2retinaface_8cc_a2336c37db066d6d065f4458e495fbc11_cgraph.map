@@ -1,0 +1,9 @@
+<map id="inference_retinaface_model" name="inference_retinaface_model">
+<area shape="rect" id="node1" title="执行RetinaFace模型推理" alt="" coords="5,74,161,115"/>
+<area shape="rect" id="node2" href="$rknpu2_2retinaface_8cc.html#a82f6f9531f5c5e6d144c258814a03a22" title="RetinaFace后处理" alt="" coords="209,81,389,108"/>
+<area shape="rect" id="node3" href="$rknpu2_2retinaface_8cc.html#a0461ab52fc1dd08e2f9de8739e738520" title="将数值限制在指定范围内" alt="" coords="501,5,564,32"/>
+<area shape="rect" id="node4" href="$rknpu2_2retinaface_8cc.html#a563486851a2ec9e1e001e2d72248ab5e" title="过滤有效检测结果" alt="" coords="470,56,595,83"/>
+<area shape="rect" id="node5" href="$rknpu2_2retinaface_8cc.html#a44eb439f4f76da9209b77e8538042cfd" title="执行非极大值抑制（NMS）" alt="" coords="507,107,558,133"/>
+<area shape="rect" id="node7" href="$rknpu2_2retinaface_8cc.html#aad093c22094925c598342c7b07332451" title="快速排序（降序）" alt="" coords="437,157,628,184"/>
+<area shape="rect" id="node6" href="$rknpu2_2retinaface_8cc.html#a3169fd021788786afa29b1dbe0aa59c1" title="计算两个边界框的重叠度（IoU）" alt="" coords="676,107,811,133"/>
+</map>

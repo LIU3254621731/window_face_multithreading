@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Face Mesh for rk3588: cpp/main.cc 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Face Mesh for rk3588
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">基于RKNN的Face Mesh模型推理示例</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_df511e5bd85cec96854b39d5e1c27aa8.html">cpp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">main.cc 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>RetinaFace人脸检测示例程序  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="retinaface_8h_source.html">retinaface.h</a>&quot;</code><br />
+<code>#include &quot;image_utils.h&quot;</code><br />
+<code>#include &quot;image_drawing.h&quot;</code><br />
+<code>#include &quot;file_utils.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+main.cc 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cc__incl.png" border="0" usemap="#acpp_2main_8cc" alt=""/></div>
+<map name="acpp_2main_8cc" id="acpp_2main_8cc">
+<area shape="rect" title="RetinaFace人脸检测示例程序" alt="" coords="327,5,427,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,76,107"/>
+<area shape="rect" title=" " alt="" coords="101,80,167,107"/>
+<area shape="rect" title=" " alt="" coords="192,80,263,107"/>
+<area shape="rect" title=" " alt="" coords="287,80,357,107"/>
+<area shape="rect" href="retinaface_8h.html" title="RetinaFace人脸检测模型接口定义" alt="" coords="381,80,481,107"/>
+<area shape="rect" title=" " alt="" coords="505,80,616,107"/>
+<area shape="rect" title=" " alt="" coords="640,80,775,107"/>
+<area shape="rect" title=" " alt="" coords="799,80,888,107"/>
+<area shape="rect" title=" " alt="" coords="329,155,419,181"/>
+<area shape="rect" title=" " alt="" coords="443,155,534,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="memdesc:a3c04138a5bfe5d72780bb7e82a18e627"><td class="mdescLeft">&#160;</td><td class="mdescRight">主函数，用于运行RetinaFace人脸检测  <a href="main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">更多...</a><br /></td></tr>
+<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>RetinaFace人脸检测示例程序 </p>
+<dl class="section author"><dt>作者</dt><dd>边锦程 </dd></dl>
+</div><h2 class="groupheader">函数说明</h2>
+<a id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c04138a5bfe5d72780bb7e82a18e627">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>主函数，用于运行RetinaFace人脸检测 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">argc</td><td>命令行参数数量 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">argv</td><td>命令行参数数组 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 程序执行状态（0表示成功，非0表示失败） </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>使用方法: ./retinaface_demo &lt;model_path&gt; &lt;image_path&gt; </dd></dl>
+<p>&lt; 模型文件路径</p>
+<p>&lt; 输入图像路径</p>
+<p>&lt; RKNN应用上下文</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cc_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#amain_8cc_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
+<map name="amain_8cc_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="amain_8cc_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
+<area shape="rect" title="主函数，用于运行RetinaFace人脸检测" alt="" coords="5,140,60,167"/>
+<area shape="rect" href="retinaface_8h.html#a19d411e26eec145ce8e0b9d5a9a75f04" title="执行RetinaFace模型推理" alt="" coords="112,74,268,115"/>
+<area shape="rect" href="retinaface_8h.html#a48bd6488075b0f54463c555244cf7db1" title="初始化RetinaFace模型" alt="" coords="108,140,272,167"/>
+<area shape="rect" href="retinaface_8h.html#a6fd5b6d3fd3d5eb41273cb3ac445cd87" title="释放RetinaFace模型资源" alt="" coords="119,191,261,233"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a82f6f9531f5c5e6d144c258814a03a22" title="RetinaFace后处理" alt="" coords="320,81,500,108"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a0461ab52fc1dd08e2f9de8739e738520" title="将数值限制在指定范围内" alt="" coords="612,5,675,32"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a563486851a2ec9e1e001e2d72248ab5e" title="过滤有效检测结果" alt="" coords="581,56,706,83"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a44eb439f4f76da9209b77e8538042cfd" title="执行非极大值抑制（NMS）" alt="" coords="618,107,669,133"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#aad093c22094925c598342c7b07332451" title="快速排序（降序）" alt="" coords="548,157,739,184"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#a3169fd021788786afa29b1dbe0aa59c1" title="计算两个边界框的重叠度（IoU）" alt="" coords="787,107,921,133"/>
+<area shape="rect" href="rknpu2_2retinaface_8cc.html#adf678ec5ada45bc71d347cf33a20e859" title="打印张量属性信息" alt="" coords="341,140,479,167"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

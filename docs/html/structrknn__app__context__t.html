@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Face Mesh for rk3588: rknn_app_context_t结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Face Mesh for rk3588
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">基于RKNN的Face Mesh模型推理示例</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="structrknn__app__context__t-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">rknn_app_context_t结构体 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>RKNN应用上下文结构体  
+ <a href="structrknn__app__context__t.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="retinaface_8h_source.html">retinaface.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a65160361b097c1c0bc813d8c1d07e30b"><td class="memItemLeft" align="right" valign="top">rknn_context&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrknn__app__context__t.html#a65160361b097c1c0bc813d8c1d07e30b">rknn_ctx</a></td></tr>
+<tr class="separator:a65160361b097c1c0bc813d8c1d07e30b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7374af45b21bda14a82e900ca6f0b494"><td class="memItemLeft" align="right" valign="top">rknn_input_output_num&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrknn__app__context__t.html#a7374af45b21bda14a82e900ca6f0b494">io_num</a></td></tr>
+<tr class="separator:a7374af45b21bda14a82e900ca6f0b494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16e0209c8c50f73287465325a7f28e1f"><td class="memItemLeft" align="right" valign="top">rknn_tensor_attr *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrknn__app__context__t.html#a16e0209c8c50f73287465325a7f28e1f">input_attrs</a></td></tr>
+<tr class="separator:a16e0209c8c50f73287465325a7f28e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33068b8a85fc53e09b765c3f9b26b794"><td class="memItemLeft" align="right" valign="top">rknn_tensor_attr *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrknn__app__context__t.html#a33068b8a85fc53e09b765c3f9b26b794">output_attrs</a></td></tr>
+<tr class="separator:a33068b8a85fc53e09b765c3f9b26b794"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01cb4d7952674052971bc13fde60a61e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrknn__app__context__t.html#a01cb4d7952674052971bc13fde60a61e">model_channel</a></td></tr>
+<tr class="separator:a01cb4d7952674052971bc13fde60a61e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afff07713ba9c190318972b5a69869a4f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrknn__app__context__t.html#afff07713ba9c190318972b5a69869a4f">model_width</a></td></tr>
+<tr class="separator:afff07713ba9c190318972b5a69869a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66ad5a960811e5beddfc0d5d58417be5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrknn__app__context__t.html#a66ad5a960811e5beddfc0d5d58417be5">model_height</a></td></tr>
+<tr class="separator:a66ad5a960811e5beddfc0d5d58417be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>RKNN应用上下文结构体 </p>
+</div><h2 class="groupheader">类成员变量说明</h2>
+<a id="a16e0209c8c50f73287465325a7f28e1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16e0209c8c50f73287465325a7f28e1f">&#9670;&nbsp;</a></span>input_attrs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rknn_tensor_attr* rknn_app_context_t::input_attrs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>输入张量属性 </p>
+
+</div>
+</div>
+<a id="a7374af45b21bda14a82e900ca6f0b494"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7374af45b21bda14a82e900ca6f0b494">&#9670;&nbsp;</a></span>io_num</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rknn_input_output_num rknn_app_context_t::io_num</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>输入输出数量 </p>
+
+</div>
+</div>
+<a id="a01cb4d7952674052971bc13fde60a61e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01cb4d7952674052971bc13fde60a61e">&#9670;&nbsp;</a></span>model_channel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rknn_app_context_t::model_channel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>模型通道数 </p>
+
+</div>
+</div>
+<a id="a66ad5a960811e5beddfc0d5d58417be5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66ad5a960811e5beddfc0d5d58417be5">&#9670;&nbsp;</a></span>model_height</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rknn_app_context_t::model_height</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>模型高度 </p>
+
+</div>
+</div>
+<a id="afff07713ba9c190318972b5a69869a4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afff07713ba9c190318972b5a69869a4f">&#9670;&nbsp;</a></span>model_width</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rknn_app_context_t::model_width</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>模型宽度 </p>
+
+</div>
+</div>
+<a id="a33068b8a85fc53e09b765c3f9b26b794"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33068b8a85fc53e09b765c3f9b26b794">&#9670;&nbsp;</a></span>output_attrs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rknn_tensor_attr* rknn_app_context_t::output_attrs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>输出张量属性 </p>
+
+</div>
+</div>
+<a id="a65160361b097c1c0bc813d8c1d07e30b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65160361b097c1c0bc813d8c1d07e30b">&#9670;&nbsp;</a></span>rknn_ctx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rknn_context rknn_app_context_t::rknn_ctx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>RKNN上下文 </p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>cpp/<a class="el" href="retinaface_8h_source.html">retinaface.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

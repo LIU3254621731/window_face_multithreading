@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Face Mesh for rk3588: retinaface_object_t结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Face Mesh for rk3588
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">基于RKNN的Face Mesh模型推理示例</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="structretinaface__object__t-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">retinaface_object_t结构体 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>RetinaFace检测结果对象结构体  
+ <a href="structretinaface__object__t.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="retinaface_8h_source.html">retinaface.h</a>&gt;</code></p>
+<div class="dynheader">
+retinaface_object_t 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structretinaface__object__t__coll__graph.png" border="0" usemap="#aretinaface__object__t_coll__map" alt="Collaboration graph"/></div>
+<map name="aretinaface__object__t_coll__map" id="aretinaface__object__t_coll__map">
+<area shape="rect" title="RetinaFace检测结果对象结构体" alt="" coords="16,95,163,121"/>
+<area shape="rect" href="structponit__t.html" title="点坐标结构体" alt="" coords="5,5,72,32"/>
+<area shape="rect" href="structbox__rect__t.html" title="边界框结构体" alt="" coords="96,5,187,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a70d4e8d8996fff5d44c66e98d189983a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structretinaface__object__t.html#a70d4e8d8996fff5d44c66e98d189983a">cls</a></td></tr>
+<tr class="separator:a70d4e8d8996fff5d44c66e98d189983a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8b811a79efcec5131764d7c73b41b04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structbox__rect__t.html">box_rect_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structretinaface__object__t.html#aa8b811a79efcec5131764d7c73b41b04">box</a></td></tr>
+<tr class="separator:aa8b811a79efcec5131764d7c73b41b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44de465bec722a2a9461bacaf70008f5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structretinaface__object__t.html#a44de465bec722a2a9461bacaf70008f5">score</a></td></tr>
+<tr class="separator:a44de465bec722a2a9461bacaf70008f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f627b20a21dd9e628a3175982cd9c0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structponit__t.html">ponit_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structretinaface__object__t.html#a9f627b20a21dd9e628a3175982cd9c0c">ponit</a> [5]</td></tr>
+<tr class="separator:a9f627b20a21dd9e628a3175982cd9c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>RetinaFace检测结果对象结构体 </p>
+</div><h2 class="groupheader">类成员变量说明</h2>
+<a id="aa8b811a79efcec5131764d7c73b41b04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8b811a79efcec5131764d7c73b41b04">&#9670;&nbsp;</a></span>box</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structbox__rect__t.html">box_rect_t</a> retinaface_object_t::box</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>边界框 </p>
+
+</div>
+</div>
+<a id="a70d4e8d8996fff5d44c66e98d189983a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70d4e8d8996fff5d44c66e98d189983a">&#9670;&nbsp;</a></span>cls</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int retinaface_object_t::cls</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>类别 </p>
+
+</div>
+</div>
+<a id="a9f627b20a21dd9e628a3175982cd9c0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f627b20a21dd9e628a3175982cd9c0c">&#9670;&nbsp;</a></span>ponit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structponit__t.html">ponit_t</a> retinaface_object_t::ponit[5]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>人脸关键点坐标 </p>
+
+</div>
+</div>
+<a id="a44de465bec722a2a9461bacaf70008f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44de465bec722a2a9461bacaf70008f5">&#9670;&nbsp;</a></span>score</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float retinaface_object_t::score</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>置信度分数 </p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>cpp/<a class="el" href="retinaface_8h_source.html">retinaface.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

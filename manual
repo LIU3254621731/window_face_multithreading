@@ -1,0 +1,298 @@
+# Doxyfile 1.9.1
+
+#---------------------------------------------------------------------------
+# Project related configuration options
+#---------------------------------------------------------------------------
+
+DOXYFILE_ENCODING      = UTF-8
+
+# 项目名称
+PROJECT_NAME           = "Face Mesh for rk3588"
+
+# 项目版本号
+PROJECT_NUMBER         = "1.0.0"
+
+# 项目简介
+PROJECT_BRIEF          = "基于RKNN的Face Mesh模型推理示例"
+
+# 项目logo
+PROJECT_LOGO           = 
+
+# 输出目录
+OUTPUT_DIRECTORY       = docs
+
+# 是否创建子目录
+CREATE_SUBDIRS         = NO
+
+# 是否允许Unicode文件名
+ALLOW_UNICODE_NAMES    = NO
+
+# 输出语言
+OUTPUT_LANGUAGE        = Chinese
+
+# 输出文本方向
+OUTPUT_TEXT_DIRECTION  = None
+
+#---------------------------------------------------------------------------
+# Build related configuration options
+#---------------------------------------------------------------------------
+
+# 是否生成HTML文档
+GENERATE_HTML          = YES
+
+# HTML输出目录
+HTML_OUTPUT            = html
+
+# HTML文件扩展名
+HTML_FILE_EXTENSION    = .html
+
+# HTML头部文件
+HTML_HEADER            = 
+
+# HTML底部文件
+HTML_FOOTER            = 
+
+# HTML样式表
+HTML_STYLESHEET        = 
+
+# 是否生成LaTeX文档
+GENERATE_LATEX         = No
+
+# LaTeX输出目录
+LATEX_OUTPUT           = latex
+
+# 是否生成RTF文档
+GENERATE_RTF           = NO
+
+# 是否生成Man手册
+GENERATE_MAN           = NO
+
+# 是否生成XML文档
+GENERATE_XML           = NO
+
+#---------------------------------------------------------------------------
+# Configuration options related to the input files
+#---------------------------------------------------------------------------
+
+# 输入文件目录
+INPUT                  = cpp
+
+# 文件模式
+FILE_PATTERNS          = *.cc *.h *.cpp *.hpp
+
+# 递归搜索
+RECURSIVE              = YES
+
+# 排除的文件和目录
+EXCLUDE                = 
+
+# 排除模式
+EXCLUDE_PATTERNS       = 
+
+# 排除符号
+EXCLUDE_SYMBOLS        = 
+
+# 是否提取私有成员
+EXTRACT_PRIVATE        = YES
+
+# 是否提取静态成员
+EXTRACT_STATIC         = YES
+
+# 是否提取本地类
+EXTRACT_LOCAL_CLASSES  = YES
+
+# 是否提取本地方法
+EXTRACT_LOCAL_METHODS  = YES
+
+#---------------------------------------------------------------------------
+# Configuration options related to the alphabetical class index
+#---------------------------------------------------------------------------
+
+# 是否生成字母索引
+ALPHABETICAL_INDEX     = YES
+
+#---------------------------------------------------------------------------
+# Configuration options related to the HTML output
+#---------------------------------------------------------------------------
+
+# 是否生成类图
+HAVE_DOT               = YES
+
+# 类图最大节点数
+DOT_GRAPH_MAX_NODES    = 50
+
+# 是否生成调用图
+CALL_GRAPH             = YES
+
+# 是否生成调用者图
+CALLER_GRAPH           = YES
+
+#---------------------------------------------------------------------------
+# Configuration options related to the LaTeX output
+#---------------------------------------------------------------------------
+
+# LaTeX文档类型
+LATEX_DOC_TYPE         = article
+
+#---------------------------------------------------------------------------
+# Configuration options related to the RTF output
+#---------------------------------------------------------------------------
+
+# RTF文档类型
+RTF_DOC_TYPE           = rtf
+
+#---------------------------------------------------------------------------
+# Configuration options related to the man page output
+#---------------------------------------------------------------------------
+
+# Man手册扩展名
+MAN_EXTENSION          = .3
+
+#---------------------------------------------------------------------------
+# Configuration options related to the XML output
+#---------------------------------------------------------------------------
+
+# XML文档类型
+XML_DOC_TYPE           = docbook
+
+#---------------------------------------------------------------------------
+# Configuration options related to the preprocessor
+#---------------------------------------------------------------------------
+
+# 是否启用预处理
+ENABLE_PREPROCESSING   = YES
+
+# 是否展开宏定义
+MACRO_EXPANSION        = YES
+
+# 是否展开预处理器条件
+EXPAND_ONLY_PREDEF     = YES
+
+# 预定义宏
+PREDEFINED             = 
+
+#---------------------------------------------------------------------------
+# Configuration options related to external references
+#---------------------------------------------------------------------------
+
+# 外部参考标签文件
+TAGFILES               = 
+
+#---------------------------------------------------------------------------
+# Configuration options related to the dot tool
+#---------------------------------------------------------------------------
+
+# 是否使用dot工具
+CLASS_DIAGRAMS         = YES
+
+# dot工具路径
+DOT_PATH               = 
+
+# dot工具字体
+DOT_FONTNAME           = Helvetica
+
+# dot工具字体大小
+DOT_FONTSIZE           = 10
+
+#---------------------------------------------------------------------------
+# Configuration options related to the search engine
+#---------------------------------------------------------------------------
+
+# 是否生成搜索索引
+SEARCHENGINE           = YES
+
+# 搜索索引文件
+SEARCHDATA_FILE        = searchdata.xml
+
+# 搜索索引目录
+SEARCHDATA_DIR         = search
+
+#---------------------------------------------------------------------------
+# Configuration options related to the documentation of groups
+#---------------------------------------------------------------------------
+
+# 是否生成组文档
+GROUP_DOCS             = YES
+
+# 组文档目录
+GROUP_DOCS_DIR         = groups
+
+#---------------------------------------------------------------------------
+# Configuration options related to the documentation of files
+#---------------------------------------------------------------------------
+
+# 是否生成文件文档
+FILE_DOCS              = YES
+
+# 文件文档目录
+FILE_DOCS_DIR          = files
+
+#---------------------------------------------------------------------------
+# Configuration options related to the documentation of namespaces
+#---------------------------------------------------------------------------
+
+# 是否生成命名空间文档
+NAMESPACE_DOCS         = YES
+
+# 命名空间文档目录
+NAMESPACE_DOCS_DIR     = namespaces
+
+#---------------------------------------------------------------------------
+# Configuration options related to the documentation of classes
+#---------------------------------------------------------------------------
+
+# 是否生成类文档
+CLASS_DOCS             = YES
+
+# 类文档目录
+CLASS_DOCS_DIR         = classes
+
+#---------------------------------------------------------------------------
+# Configuration options related to the documentation of functions
+#---------------------------------------------------------------------------
+
+# 是否生成函数文档
+FUNCTION_DOCS          = YES
+
+# 函数文档目录
+FUNCTION_DOCS_DIR      = functions
+
+#---------------------------------------------------------------------------
+# Configuration options related to the documentation of variables
+#---------------------------------------------------------------------------
+
+# 是否生成变量文档
+VARIABLE_DOCS          = YES
+
+# 变量文档目录
+VARIABLE_DOCS_DIR      = variables
+
+#---------------------------------------------------------------------------
+# Configuration options related to the documentation of typedefs
+#---------------------------------------------------------------------------
+
+# 是否生成类型定义文档
+TYPEDEF_DOCS           = YES
+
+# 类型定义文档目录
+TYPEDEF_DOCS_DIR       = typedefs
+
+#---------------------------------------------------------------------------
+# Configuration options related to the documentation of enums
+#---------------------------------------------------------------------------
+
+# 是否生成枚举文档
+ENUM_DOCS              = YES
+
+# 枚举文档目录
+ENUM_DOCS_DIR          = enums
+
+#---------------------------------------------------------------------------
+# Configuration options related to the documentation of defines
+#---------------------------------------------------------------------------
+
+# 是否生成宏定义文档
+DEFINE_DOCS            = YES
+
+# 宏定义文档目录
+DEFINE_DOCS_DIR        = defines

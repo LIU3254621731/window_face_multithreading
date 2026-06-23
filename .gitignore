@@ -1,0 +1,40 @@
+﻿# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+
+# Build outputs
+out/
+build/
+Debug/
+Release/
+x64/
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.dll
+
+# CMake
+CMakeFiles/
+cmake_install.cmake
+CMakeCache.txt
+!CMakeLists.txt
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+
+# Personal documents
+关于开展2024-2025学年学生先进集体、先进个人和优秀学生奖学金评选工作的通知/
